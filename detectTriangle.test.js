@@ -25,4 +25,20 @@ describe('detectTriangle function', () => {
       'Input must be a number'
     );
   });
+
+  it('should throw error when input is not a positive number', () => {
+    expect(() => detectTriangle(-1, 2, 3)).toThrowError(
+      'Input must be a positive number'
+    );
+    expect(() => detectTriangle(1, -2, 3)).toThrowError(
+      'Input must be a positive number'
+    );
+    expect(() => detectTriangle(1, 2, -3)).toThrowError(
+      'Input must be a positive number'
+    );
+    // Zero is not a positive and negative number
+    expect(() => detectTriangle(0, 2, 3)).toThrowError(
+      'Input must be a positive number'
+    );
+  });
 });
