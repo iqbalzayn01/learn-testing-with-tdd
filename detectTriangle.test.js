@@ -10,7 +10,7 @@
  *   - should return "Segitiga Sembarang" when all input are different
  */
 
-import { describe, it } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import detectTriangle from './detectTriangle';
 
 describe('detectTriangle function', () => {
