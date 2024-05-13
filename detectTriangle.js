@@ -6,6 +6,10 @@ function detectTriangle(a, b, c) {
   if (a <= 0 || b <= 0 || c <= 0) {
     throw new Error('Input must be a positive number');
   }
+
+  if (a + b <= c || a + c <= b || b + c <= a) {
+    throw new Error('Input is triangle inequality violation');
+  }
 }
 
 export default detectTriangle;

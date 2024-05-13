@@ -14,6 +14,7 @@ import { describe, it, expect } from 'vitest';
 import detectTriangle from './detectTriangle';
 
 describe('detectTriangle function', () => {
+  // test 1
   it('should throw error when input is not a number', () => {
     expect(() => detectTriangle('a', 2, 3)).toThrowError(
       'Input must be a number'
@@ -26,6 +27,7 @@ describe('detectTriangle function', () => {
     );
   });
 
+  // test 2
   it('should throw error when input is not a positive number', () => {
     expect(() => detectTriangle(-1, 2, 3)).toThrowError(
       'Input must be a positive number'
@@ -39,6 +41,19 @@ describe('detectTriangle function', () => {
     // Zero is not a positive and negative number
     expect(() => detectTriangle(0, 2, 3)).toThrowError(
       'Input must be a positive number'
+    );
+  });
+
+  // test 3
+  it('should throw error when input is triangle inequality violation', () => {
+    expect(() => detectTriangle(1, 2, 3)).toThrowError(
+      'Input is triangle inequality violation'
+    );
+    expect(() => detectTriangle(5, 1, 3)).toThrowError(
+      'Input is triangle inequality violation'
+    );
+    expect(() => detectTriangle(3, 4, 1)).toThrowError(
+      'Input is triangle inequality violation'
     );
   });
 });
